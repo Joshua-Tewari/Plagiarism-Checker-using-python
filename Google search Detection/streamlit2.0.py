@@ -3,7 +3,7 @@ import requests
 import pandas as pd
 import streamlit as st
 
-# Define your API key and search engine ID here
+
 API_KEY = 'AIzaSyCt3RgPyuXexIxYgW2H5mprv50Doy8hgWQ'
 SEARCH_ENGINE_ID = 'e6bc33a89e1e14aef'
 
@@ -33,7 +33,7 @@ def make_request(payload):
         raise Exception('Request failed')
     return response.json()
 
-# Create Streamlit widgets for input
+
 search_query = st.text_input("Enter search query:")
 total_results = st.number_input("Enter total results:", min_value=1, value=10, step=1)
 
@@ -61,6 +61,6 @@ if st.button("Export to Excel"):
     except Exception as e:
         st.error(f"An error occurred: {e}")
 
-# This block is required to run the Streamlit app
+# This block is required to run the Streamlit
 if __name__ == '__main__':
     st.write("Streamlit app is running...")
